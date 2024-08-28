@@ -23,17 +23,19 @@ class Todo(db.Model):
 #setup route
 @app.route('/', methods=['POST', 'GET'])
 
-def index():
+def add_task():
     if request.method == 'POST':
-        task_content = request.form["content"]
-        new_task = Todo(content = task_content)
-
-        try:
-            db.session.add(new_task)
-            db.session.commit()
-            return redirect("/")
-        except:
-            return "There was an issue adding your task"
+        task_content = request.form.get("content")
+        if not task_content:
+            return "no task entered"
+        else:
+            new_task = Todo(content = task_content)
+            try:
+                db.session.add(new_task)
+                db.session.commit()
+                return redirect("/")
+            except:
+                return "There was an issue adding your task"
         
     else:
         tasks = Todo.query.order_by("date_created").all()
