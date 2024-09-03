@@ -28,3 +28,9 @@ virtualenv env
 ```
 (env) python app.py
 ```
+
+![Screenshot 2024-09-03 145625](https://github.com/user-attachments/assets/9c7c0cc9-c35d-436d-a570-ee0bec983a96)
+
+## UPDATE:
+
+![Screenshot 2024-09-03 145640](https://github.com/user-attachments/assets/8cd891d1-b68c-48bd-bc39-c1ee9124c49a)
